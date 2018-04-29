@@ -309,9 +309,48 @@ unkonwn type
 China Wang is 25 years old
 ```
 
+---
 
+go语言的面向对象只支持封装，不支持继承多态，go语言的多态是通过接口来实现的，go语言中的接口比传统的面向对象的语言的接口要灵活很多。严格说，go属于结构化系统。go的接口实现是隐式的，只要实现接口中的方法即可表示实现了该接口。
 
-​	
+#### 示例一
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+// 接口
+type Retriever interface {
+	Get(url string) string
+}
+
+// 结构体
+type RetrieverStruct struct {
+	Content string
+}
+
+// 实现接口的方法
+func (r RetrieverStruct ) Get(url string) string {
+	return r.Content
+}
+
+// 函数
+func download(r Retriever) string {
+	return r.Get("www.ccssoft.com.cn")
+}
+
+func main() {
+	var r Retriever
+	r = RetrieverStruct{"this is a my house"}
+	fmt.Println(download(r))
+}
+
+// output
+this is a my house
+```
 
 
 
