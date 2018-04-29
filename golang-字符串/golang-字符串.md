@@ -22,3 +22,27 @@ func main(){
 - Contains, Index
 - ToLower,ToUpper
 - Trim,TrimRight,TrimLeft
+
+---
+
+#### 字符串判断是否是某字符串开头
+
+```go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+// 判断是不是以某个字符串开头
+func main(){
+	str := "hello world"
+	res0 := strings.HasPrefix(str,"http://")
+	res1:=strings.HasPrefix(str,"hello")
+
+	fmt.Printf("res0 is %v\n",res0) // res0 is false
+	fmt.Printf("res1 is %v\n",res1) // res1 is true
+}
+```
+
