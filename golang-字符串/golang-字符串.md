@@ -25,7 +25,7 @@ func main(){
 
 ---
 
-#### 字符串判断是否是某字符串开头
+#### 判断字符串是否是某字符串开头
 
 ```go
 package main
@@ -40,6 +40,27 @@ func main(){
 	str := "hello world"
 	res0 := strings.HasPrefix(str,"http://")
 	res1:=strings.HasPrefix(str,"hello")
+
+	fmt.Printf("res0 is %v\n",res0) // res0 is false
+	fmt.Printf("res1 is %v\n",res1) // res1 is true
+}
+```
+
+#### 判断字符串是否是某字符串结尾
+
+```go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+// 判断是不是以某个字符串结尾
+func main(){
+	str := "hello world"
+	res0 := strings.HasSuffix(str,"http://")
+	res1:=strings.HasSuffix(str,"world")
 
 	fmt.Printf("res0 is %v\n",res0) // res0 is false
 	fmt.Printf("res1 is %v\n",res1) // res1 is true
