@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 )
@@ -11,6 +12,13 @@ import (
 func index(w http.ResponseWriter, r *http.Request) {
 	// 往w里写内容，就会在浏览器里输出
 	fmt.Fprintf(w, "Helll Golang Http!")
+
+	// 接受输入的内容，并在iterm中打印出来
+	b, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("%s\n", b)
 }
 
 func main() {
