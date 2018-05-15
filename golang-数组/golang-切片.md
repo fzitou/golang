@@ -204,3 +204,44 @@ func main() {
 - 把其他切片赋值得到新切片
 - 切片再自身切片
 
+
+slice类似于python中的切片。可以理解为一个指向数组的指针。而且这个指针还有两个域：长度，容量。长度为当前元素个数，容量为最大元素个数，类似于STL中vector的size和capacity。正常情况下slice和数组共享一段存储空间，当我们对slice操作使得slice超出数组大小时，则slice会重新分配空间。也可以用make为slice分配空间。
+
+```go
+package main
+
+import "fmt"
+
+/**
+* @author wangpengcheng@ccssoft.com.cn
+* @date 2018/5/14 10:52
+ */
+
+func main() {
+
+	a := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+	slice1 := a[5:10]
+	fmt.Println(slice1) //[6,7,8,9,10]
+
+	a[5] = 10
+	fmt.Println(slice1) //[10,7,8,9,10]
+
+	slice1 = append(slice1, 100) //超出了原始数组的容量，会重新建一个数组，不会再指向原来的数组了
+	fmt.Println(slice1)          // [10 7 8 9 10 100]
+
+	a[6] = 11           //
+	fmt.Println(slice1) // [10 7 8 9 10 100]
+
+	// map
+	mymap := make(map[int]int)
+	mymap[10] = 10 * 10
+	mymap[5] = 5 * 5
+	mymap[15] = 15 * 15
+
+	for k, v := range mymap {
+		fmt.Println(k, v)
+	}
+}
+```
+
