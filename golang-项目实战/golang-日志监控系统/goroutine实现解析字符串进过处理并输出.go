@@ -10,7 +10,6 @@ import (
 * @author wangpengcheng@ccssoft.com.cn
 * @date 2018/5/20 21:24
  */
-
 type LogProcess struct {
 	rc          chan string // 读取模块到解析模块传递数据
 	wc          chan string //解析模块到写入模块解析数据
