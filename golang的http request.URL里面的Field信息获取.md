@@ -31,6 +31,7 @@ func golangRequestURLFieldInfo(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 	http.HandleFunc("/", golangRequestURLFieldInfo)
+	http.HandlerFunc
 	log.Fatal(http.ListenAndServe(":9090", nil))
 }
 
