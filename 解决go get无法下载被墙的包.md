@@ -18,4 +18,9 @@ mkdir -p $GOPATH/src/golang.org/x
 cd $GOPATH/src/golang.org/x
 git clone https://github.com/golang/net.git
 ```
+#### 方式三：
 
+使用国内网站打包好，然后下载打包好的压缩包解压安装到本地
+```bash
+https://www.golangtc.com/download/package
+```
