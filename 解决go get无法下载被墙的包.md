@@ -23,4 +23,9 @@ git clone https://github.com/golang/net.git
 使用国内网站打包好，然后下载打包好的压缩包解压安装到本地
 ```bash
 https://www.golangtc.com/download/package
+
+# 1.在上诉网站里按照提示下载这个包，并解压到本地文件夹
+# 2.在goland IDE的terminal里进行go install cloud.google.com/go/storage
+# 3.第二步会报错，提示有些包在指定路径没找到，于是按照提示给的链接再在第一步的网站里找到并下载，按照路径放在对应的文件夹内
+# 4.所有提示缺少的包都装好以后就可以顺利的install了。
 ```
